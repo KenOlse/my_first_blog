@@ -11,7 +11,12 @@
     <div></div>
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. At natus tempore, ullam voluptate explicabo officiis deserunt minima blanditiis quidem voluptates dolore, nesciunt doloremque debitis, eos ducimus maiores cupiditate! Optio tempora consequatur enim, officia dolore.</p>
     <script>
-    let em = document.querySelector('div');
+    let em = document.querySelector('div'),
+        head = document.querySelector('h1');
+    head.style.color = 'darkred';
+    setInterval(function() {
+        head.style.color = 'gold';
+    }, 1000)
     time = Date();
     em.innerHTML = time;
     </script>
