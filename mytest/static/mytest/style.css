@@ -11,6 +11,10 @@
     text-align: center;
 }
 
+.header_logo h1 {
+    color: blue;
+}
+
 .menu {
     list-style: none;
     display: flex;
@@ -19,8 +23,45 @@
     margin: auto;
 }
 
+.menu a {
+    margin-left: 20px;
+    color: indigo;
+}
+
+.menu a:before {
+    content: '';
+    display: inline-block;
+    width: 20px;
+    height: 2px;
+    margin-right: 2px;
+    background: indigo;
+}
+
+.menu a:after {
+    content: '';
+    display: inline-block;
+    width: 20px;
+    height: 2px;
+    margin-left: 2px;
+    background: indigo;
+}
+
+.menu em {
+    font-family: monospace;
+    font-size: 12px;
+    color: #888;
+}
+
 hr {
     background: darkred;
     border: none;
     height: 2px;
+    width: 400px;
+    margin: 2px auto;
+}
+
+section {
+    width: 80%;
+    margin: auto;
+    padding: 30px;
 }
