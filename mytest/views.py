@@ -1,4 +1,6 @@
 from django.shortcuts import render
+from .models import Post 
 
 def post_list(request):
-	return render(request, 'mytest/blog_list.html', {})
+	urls = Post.objects.all()
+	return render(request, 'mytest/blog_list.html', {'urls': urls})
