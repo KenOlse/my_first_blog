@@ -17,10 +17,12 @@
 
 .menu {
     list-style: none;
-    display: flex;
-    align-items: center;
     width: 90%;
     margin: auto;
+}
+
+.menu li {
+    padding: 5px;
 }
 
 .menu a {

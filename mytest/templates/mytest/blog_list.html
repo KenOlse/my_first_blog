@@ -1,34 +1,20 @@
-{% load static %}
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="{% static 'mytest/style.css' %}">
-    <title>Base</title>
-</head>
-
-<body>
-    <div class="container">
-        <div class="header_logo">
-            <h1>My First Blog</h1>
-            <h3>Grot</h3>
-        </div>
-        <ul class="menu">
-            <li>
-                {% for i in urls %}
-                <h1>
-                    <a href="#">{{ i.title }}</a>
-                </h1>
-                <p>{{ i.text }}</p>
-                <em>{{ i.created_date }}</em><br>
-                {% endfor %}
-            </li>
-        </ul>
-        <section class="section">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. At natus tempore, ullam voluptate explicabo officiis deserunt minima blanditiis quidem voluptates dolore, nesciunt doloremque debitis, eos ducimus maiores cupiditate! Optio tempora consequatur enim, officia dolore.</p>
-        </section>
-    </div>
-</body>
-
-</html>
+{% extends "mytest/generic.html" %}
+{% block title %}
+blog_list
+{% endblock title %}
+{% block content %}
+<ul class="menu">
+    <li>
+        {% for i in urls %}
+        <h1>
+            <a href="{% url 'entries' i.id %}">{{ i.title }}</a>
+        </h1>
+        <p>{{ i.text }}</p>
+        <em>{{ i.created_date }}</em><br>
+        {% endfor %}
+    </li>
+</ul>
+<section class="section">
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. At natus tempore, ullam voluptate explicabo officiis deserunt minima blanditiis quidem voluptates dolore, nesciunt doloremque debitis, eos ducimus maiores cupiditate! Optio tempora consequatur enim, officia dolore.</p>
+</section>
+{% endblock content %}

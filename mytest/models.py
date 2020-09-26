@@ -18,3 +18,13 @@ class Post(models.Model):
 	class Meta:
 		verbose_name = 'Блог'
 		verbose_name_plural = 'Блоги'
+
+class Author(models.Model):
+	post = models.ForeignKey(Post, on_delete = models.CASCADE)
+	f_name = models.CharField(max_length=100, verbose_name='Name')
+	l_name = models.CharField(max_length=150, verbose_name='Last Name')
+
+	def __str__(self):
+		return self.l_name
+
+	
