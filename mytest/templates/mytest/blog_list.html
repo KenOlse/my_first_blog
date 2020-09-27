@@ -10,6 +10,7 @@ blog_list
             <a href="{% url 'entries' i.id %}">{{ i.title }}</a>
         </h1>
         <p>{{ i.text }}</p>
+        <h3>{{ i.published_date }}</h3>
         <em>{{ i.created_date }}</em><br>
         {% endfor %}
     </li>
